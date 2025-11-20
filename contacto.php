@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contacto — Reformas Asier</title>
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/contacto.css">
-    <link rel="shortcut icon" href="../img/Logo-reformas-asier.png"/>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="shortcut icon" href="img/Logo-reformas-asier.png"/>
 </head>
 <body>
-    <?php include '../includes/nav.php'; ?>
+   <header>
+        <div class="container">
+           <?php include 'includes/nav.php'; ?>
+        </div>
+    </header>
 
     <main class="container" role="main">
 <section id="contacto" class="contact">
@@ -26,6 +31,6 @@
         </section>        
     </main>
 
-    <?php include '../includes/footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
