@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Reformas Asier</title>
     <script src="../js/indexForm.js" defer></script>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="img\Logo-reformas-asier.png" />
 </head>
 <body>
     <header>
         <div class="container">
-            <nav>
-                <div class="brand">Reformas Asier</div>
-                <div class="nav-links">
-                    <a href="#servicios">Servicios</a>
-                    <a href="#portfolio">Proyectos</a>
-                    <a href="#sobre-nosotros">Sobre nosotros</a>
-                    <a href="#contacto" class="cta">Pedir presupuesto</a>
-                </div>
-            </nav>
+           <?php include 'includes/nav.php'; ?>
         </div>
     </header>
 
@@ -26,7 +21,7 @@
         <section class="hero" id="inicio">
             <div class="hero-left">
                 <h1>Reformas integrales con garantía y presupuesto claro</h1>
-                <p class="lead">Transformamos viviendas, cocinas, baños y locales con acabados duraderos y materiales de calidad. Servicio llave en mano y gestión de permisos.</p>
+                <p class="lead">Transformamos viviendas, cocinas, baños y locales con acabados duraderos y materiales de calidad. Servicio llave en mano.</p>
                 <a href="#contacto" class="cta">Solicitar presupuesto</a>
 
                 <div class="services">
@@ -71,7 +66,7 @@
 
         <section id="sobre-nosotros" class="about">
             <h2>Sobre nosotros</h2>
-            <p class="muted">Empresa familiar con más de 12 años de experiencia en reformas. Trabajamos con materiales certificados y ofrecemos garantía escrita en todos los trabajos.</p>
+            <p class="muted">Empresa familiar con más de 25 años de experiencia en reformas. Trabajamos con materiales certificados y ofrecemos garantía escrita en todos los trabajos.</p>
         </section>
 
         <section id="contacto" class="contact">
@@ -98,6 +93,7 @@
                 </form>
             </div>
         </section>
+        <?php include 'includes/footer.php'; ?>
     </main>
 
 </body>

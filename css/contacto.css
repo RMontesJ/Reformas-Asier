@@ -1,0 +1,52 @@
+.contact {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact .muted {
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.contact-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.6rem;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    max-width: 520px;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+.contact-card h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: #111827;
+}
+
+.contact-card p {
+    margin: 0 0 1rem 0;
+    color: #374151;
+    font-size: 0.98rem;
+}
+
+.contact-card a {
+    color: #0b6efd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes responsivos */
+@media (min-width: 700px) {
+    .contact {
+        padding: 3rem 1.5rem;
+    }
+    .contact-card {
+        padding: 2rem;
+    }
+}
