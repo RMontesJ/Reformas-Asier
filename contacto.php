@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/comun.css">
     <link rel="shortcut icon" href="img/Logo-reformas-asier.png"/>
 </head>
 <body>

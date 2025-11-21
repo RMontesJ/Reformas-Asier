@@ -1,0 +1,32 @@
+
+/* Colores y estructura compartidas en todas las paginas */
+
+:root{
+  --accent:#2b7a78;
+  --accent-2:#145a5a;
+  --muted:#6b6b6b;
+  --bg:#f7f7f7;
+  --card:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:#222;
+}
+
+/* Layout */
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+
+
+/* Hero */
+.hero{display:flex;gap:24px;align-items:center;padding:48px 0}
+.hero-left{flex:1}
+.hero-right{flex:1}
+.hero h1{margin:0 0 12px;font-size:2rem}
+.lead{margin:0 0 18px;color:var(--muted)}
+.cta{background:#000000;color:var(--accent);padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none}
