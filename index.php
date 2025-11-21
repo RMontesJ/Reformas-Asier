@@ -6,6 +6,7 @@
     <title>Reformas Asier</title>
     <script src="../js/indexForm.js" defer></script>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/comun.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="shortcut icon" href="img\Logo-reformas-asier.png" />
