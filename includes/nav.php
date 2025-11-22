@@ -6,7 +6,7 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="#servicios">Servicios</a>
+                <a href="testimonios.php">Testimonios</a>
                 <a href="#portfolio">Proyectos</a>
                 <a href="#sobre-nosotros">Sobre nosotros</a>
                 <a href="contacto.php">Contacto</a>

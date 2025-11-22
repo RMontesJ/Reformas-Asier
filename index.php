@@ -64,11 +64,61 @@
                 <a class="card project" href="#"><img class="responsive-img" src="https://via.placeholder.com/600x400?text=Proyecto+4" alt="Proyecto 4"><p>Reforma integral</p></a>
             </div>
         </section>
+            
+<section id="sobre-nosotros" class="about">
+    <h2>Sobre nosotros</h2>
 
-        <section id="sobre-nosotros" class="about">
-            <h2>Sobre nosotros</h2>
-            <p class="muted">Empresa familiar con más de 25 años de experiencia en reformas. Trabajamos con materiales certificados y ofrecemos garantía escrita en todos los trabajos.</p>
-        </section>
+    <div class="about-text">
+        <p class="muted">Empresa familiar con más de 25 años de experiencia en reformas. Trabajamos con materiales certificados y ofrecemos garantía escrita en todos los trabajos. somos un grupo de profesionales con mas de 20 años de experiencia construyendo edificios,urbanizaciones de chalets, y todo tipo de reformas en viviendas interior y exterior y nos hace diferentes la formalidad, seriedad y acabado de los trabajos a ejecutar.</p>
+
+        <dl class="faq">
+            <dt>¿Cuál es vuestro lema?</dt>
+            <dd class="muted">Formalidad,puntualidad en el trabajo y satisfacer al cliente en los trabajos a ejecutar.</dd>
+
+            <dt>Cuéntanos vuestra historia ¿Cómo empezó el negocio?</dt>
+            <dd class="muted">Nosotros empezamos en obra nueva edificando chalets,con una plantilla reducida, posteriormente edificios con una plantilla mas amplia y hace 9 años reformas de viviendas de todo tipo.</dd>
+
+            <dt>¿Quiénes forman parte de vuestro equipo? ¿Qué formación y experiencia tienen?</dt>
+            <dd class="muted">Albañiles,fontaneros,carpinteros,electricistas. profesionales mas de 20 años de experiencia.</dd>
+
+            <dt>¿Subcontrátais algún tipo de trabajo? ¿A quién?</dt>
+            <dd class="muted">No.</dd>
+
+            <dt>¿Cuántos trabajos hacéis al año? ¿Cuál es el presupuesto medio?</dt>
+            <dd class="muted">Mas o menos 5 reformas al año. Presupuesto medio 4500 euros</dd>
+
+            <dt>¿En qué tipos de trabajos estáis especializados?</dt>
+            <dd class="muted">Todo tipo de reformas y obra nueva</dd>
+
+            <dt>¿Qué trabajos son los más habituales?</dt>
+            <dd class="muted">Reformas de baños y cocinas</dd>
+
+            <dt>¿Con qué materiales y marcas os gusta trabajar?</dt>
+            <dd class="muted">Siempre primera calidad</dd>
+
+            <dt>¿Qué datos necesitáis para poder pasar un presupuesto detallado?</dt>
+            <dd class="muted">Saber bien en que consiste el trabajo medidas y si es con materiales o sin materiales</dd>
+
+            <dt>¿Qué os hace distintos de vuestra competencia? ¿Por qué un cliente debería elegiros a vosotros?</dt>
+            <dd class="muted">Siempre trabajamos con materiales de primera calidad, realizamos siempre un acabado excelente y solucionamos con rapidez cualquier problema que pueda surgir de la obra.</dd>
+
+            <dt>¿Qué tipo de cliente tenéis? ¿Quién es vuestro cliente ideal?</dt>
+            <dd class="muted">De dos tipos:. empresas directas y clientes particulares. cliente ideal es aquel que queda satisfecho con el trabajo solicitado es decir normalmente todos.</dd>
+
+            <dt>¿Cuáles son las dudas más habituales de vuestros clientes? ¿Qué les respondéis?</dt>
+            <dd class="muted">El tiempo de duración de la obra. que siempre se han entregado dentro del plazo pactado al inicio de la obra.</dd>
+
+            <dt>¿Qué garantías ofrecéis a vuestros clientes sobre los trabajos realizados?</dt>
+            <dd class="muted">El trabajo de obra siempre es realizado por profesionales cualificados.</dd>
+
+            <dt>¿Qué formas de pago aceptáis? ¿Ofrecéis facilidades en la forma de pago?</dt>
+            <dd class="muted">Tanto metálico, como talón nominativo........ según de acuerdo con el cliente. si.</dd>
+
+            <dt>¿De qué trabajo estáis más orgullosos?</dt>
+            <dd class="muted">De cualquiera realizado por nosotros ya que la ejecución y finalización de la obra es muy buena.</dd>
+        </dl>
+    </div>
+</section>
 
         <section id="contacto" class="contact">
             <h2>Contacto y presupuesto</h2>

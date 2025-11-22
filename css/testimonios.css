@@ -1,0 +1,12 @@
+    /* Estilos mínimos para testimonios */
+    .testimonios { padding: 2rem 1rem; max-width: 1000px; margin: 0 auto; }
+    .testimonios h1 { margin-bottom: .5rem; }
+    .testimonios .muted { color: #6b7280; margin-bottom: 1rem; }
+    .testimonials-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    .testimonial { background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 6px 18px rgba(16,24,40,0.06); }
+    blockquote { margin:0 0 .75rem 0; font-style:normal; color:#111827; }
+    footer.test-author { color:#6b7280; font-size:.95rem; }
+    @media(min-width:700px){ .testimonials-grid{ grid-template-columns: repeat(2,1fr); } }
+
+
+    
