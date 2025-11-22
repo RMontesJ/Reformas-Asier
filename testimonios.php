@@ -8,10 +8,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Testimonios — Reformas Asier</title>
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/comun.css">
-    <link rel="stylesheet" href="css/testimonios.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/comun.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/testimonios.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/footer.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href="img\Logo-reformas-asier.png" />
 </head>
 <body>
@@ -58,6 +58,15 @@
                     </blockquote>
                     <footer class="test-author">— Jesús Sánchez, hace 3 años</footer>
                 </article>
+
+                <article class="testimonial card">
+                    <blockquote>
+                        <!-- Pega aquí la opinión original sin modificar -->
+                        Compre una casa la cual necesitaba una buena reforma. Esta empresa diseñó y me asesoró en dicha reforma. La casa ha quedado espectacular. Moderna, funcional e increiblemente bonita. Recomiendo a esta empresa para cualquier reforma. Yo he quedado encantada.
+                    </blockquote>
+                    <footer class="test-author">— Maria Jose, hace 2 semanas</footer>
+                </article>
+
             </div>
 
             <p class="muted">Pega las opiniones aquí en el chat y las insertaré exactamente tal cual en esta página.</p>

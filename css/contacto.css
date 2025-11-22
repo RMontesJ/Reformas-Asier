@@ -1,7 +1,13 @@
+// ...existing code...
+/* Estilos para página de contacto — layout con flex y responsive */
 .contact {
     padding: 2rem 1rem;
     max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .contact .muted {
@@ -9,14 +15,27 @@
     margin-bottom: 1rem;
 }
 
+/* Contenedor interno que permite disponer tarjeta y info lado a lado en pantallas anchas */
+.contact-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tarjeta principal */
 .contact-card {
     background: #ffffff;
     border-radius: 8px;
     padding: 1.6rem;
     box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    width: 100%;
     max-width: 520px;
-    margin: 1rem auto;
     text-align: left;
+    flex: 1 1 520px;
+    box-sizing: border-box;
 }
 
 .contact-card h2 {
@@ -41,12 +60,36 @@
     text-decoration: underline;
 }
 
-/* Ajustes responsivos */
+/* Información adicional al lado de la tarjeta (dirección, horario...) */
+.contact-info {
+    width: 100%;
+    max-width: 360px;
+    background: transparent;
+    color: #374151;
+    padding: 0.4rem 0;
+    box-sizing: border-box;
+    flex: 0 1 360px;
+}
+
+/* Ajustes en pantallas anchas: colocar en fila */
 @media (min-width: 700px) {
     .contact {
         padding: 3rem 1.5rem;
     }
+    .contact-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2rem;
+    }
     .contact-card {
         padding: 2rem;
     }
+}
+
+/* Pequeños refinamientos */
+.contact-card h2 + p,
+.contact-info p {
+    margin-top: 0.25rem;
+    line-height: 1.5;
 }

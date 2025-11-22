@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contacto — Reformas Asier</title>
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/contacto.css">
-    <link rel="stylesheet" href="css/comun.css">
+    <link rel="stylesheet" href="css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/contacto.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/comun.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href="img/Logo-reformas-asier.png"/>
 </head>
 <body>

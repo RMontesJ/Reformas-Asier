@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Reformas Asier</title>
     <script src="../js/indexForm.js" defer></script>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/comun.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/comun.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/footer.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href="img\Logo-reformas-asier.png" />
 </head>
 <body>
