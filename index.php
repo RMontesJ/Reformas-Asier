@@ -84,9 +84,6 @@
             <dt>¿Subcontrátais algún tipo de trabajo? ¿A quién?</dt>
             <dd class="muted">No.</dd>
 
-            <dt>¿Cuántos trabajos hacéis al año? ¿Cuál es el presupuesto medio?</dt>
-            <dd class="muted">Mas o menos 5 reformas al año. Presupuesto medio 4500 euros</dd>
-
             <dt>¿En qué tipos de trabajos estáis especializados?</dt>
             <dd class="muted">Todo tipo de reformas y obra nueva</dd>
 
