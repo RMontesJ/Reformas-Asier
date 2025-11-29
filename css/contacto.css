@@ -1,4 +1,3 @@
-// ...existing code...
 /* Estilos para página de contacto — layout con flex y responsive */
 .contact {
     padding: 2rem 1rem;
@@ -34,7 +33,6 @@
     width: 100%;
     max-width: 520px;
     text-align: left;
-    flex: 1 1 520px;
     box-sizing: border-box;
 }
 

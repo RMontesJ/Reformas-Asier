@@ -7,10 +7,9 @@
             </div>
             <div class="nav-links">
                 <a href="testimonios.php">Testimonios</a>
-                <a href="#portfolio">Proyectos</a>
-                <a href="#sobre-nosotros">Sobre nosotros</a>
+                <a href="proyectos.php">Proyectos</a>
                 <a href="contacto.php">Contacto</a>
-                <a href="#contacto" class="cta">Pedir presupuesto</a>
+                <a href="contacto.php" class="cta">Pedir presupuesto</a>
             </div>
         </nav>
 </div>

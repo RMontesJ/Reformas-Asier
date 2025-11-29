@@ -1,0 +1,104 @@
+/* Proyectos — estilos basados en index.css, usando FLEX y px */
+
+.section {
+    padding: 36px 16px;
+    background: var(--bg);
+}
+
+.section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.section h2 {
+    margin: 0 0 6px 0;
+    font-size: 24px;
+    color: #111827;
+}
+.section .muted {
+    margin: 0 0 12px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Grid con FLEX y wrap */
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* permite que las tarjetas bajen cuando falta espacio */
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Tarjeta de proyecto */
+.card.project {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--card);
+    padding: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform .18s ease, box-shadow .18s ease;
+    text-decoration: none;
+    color: inherit;
+    flex: 1 1 260px;   /* crecer, encoger, base 260px */
+    min-width: 220px;
+}
+
+/* Imagen / vídeo dentro de la tarjeta */
+.card.project .responsive-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #f3f3f3;
+}
+
+/* Pie de tarjeta */
+.card.project p {
+    margin: 0;
+    padding: 12px 14px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #111827;
+    background: transparent;
+}
+
+/* Hover: elevar la tarjeta */
+.card.project:hover,
+.card.project:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    outline: none;
+}
+
+/* Vídeo específico */
+.card.project video.responsive-img {
+    height: 200px;
+    background: #000;
+}
+
+/* Responsive: en móviles apilar en columna */
+@media (max-width: 700px) {
+    .grid {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .card.project {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+    .card.project .responsive-img {
+        height: 220px;
+    }
+}
+
+/* Accesibilidad: foco visible */
+.card.project:focus-visible {
+    outline: 3px solid rgba(43,122,120,0.18);
+    outline-offset: 3px;
+}
+/* ...existing code... */

@@ -69,7 +69,7 @@
 
             </div>
 
-            <p class="muted">Pega las opiniones aquí en el chat y las insertaré exactamente tal cual en esta página.</p>
+            <p class="muted"></p>
         </section>
     </main>
 

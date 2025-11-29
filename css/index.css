@@ -9,6 +9,13 @@
     gap:16px;
     margin-top:18px;
 }
+
+/* para los textos de las targetas de fotos y videos */
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .service{
     padding:14px;border-radius:8px;background:linear-gradient(180deg,#fff,#f3faf9);border:1px solid rgba(0,0,0,0.04);
     flex:1 1 220px; /* grow, shrink, base width */
