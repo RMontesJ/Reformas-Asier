@@ -67,10 +67,7 @@
                         src="img/fotoBañoDespues.jpeg" alt="Proyecto 2">
                     <p>Baño con plato a ras</p>
                 </a>
-                <a class="card project" href="#"><img class="responsive-img"
-                        src="https://via.placeholder.com/600x400?text=Proyecto+3" alt="Proyecto 3">
-                    <p>Local comercial reformado</p>
-                </a>
+                
                 <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
                         <source src="videos/Reforma1Final.mp4" type="video/mp4">
                         Tu navegador no soporta el elemento de vídeo.
@@ -97,7 +94,7 @@
                     todo tipo de reformas en viviendas interior y exterior y nos hace diferentes la formalidad, seriedad
                     y acabado de los trabajos a ejecutar.</p>
 
-                    <p class="muted">Operamos en Aranjuez, Valdemoro, Ciempozuelos, Leganes, Toledo, Getafe, Pinto, Parla, Madrid Centro</p>
+                    <p class="muted">Operamos en Aranjuez, Valdemoro, Ciempozuelos, Leganes, Toledo, Getafe, Pinto, Parla, Madrid Centro.</p>
 
                 <dl class="faq">
                     <dt>¿Cuál es vuestro lema?</dt>
