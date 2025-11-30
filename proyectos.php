@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/nav.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/footer.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/proyectos.css?v=<?php echo time(); ?>">
+    <script src="js/fotos.js" defer></script>
     <link rel="shortcut icon" href="img\Logo-reformas-asier.png" />
 
 </head>
@@ -36,6 +37,104 @@
                     </a>
                 </div>
             </div>
+
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="muted">Reforma de baño.</p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño1Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño1Despues.jpeg" alt="Proyecto 2">
+                        <p>Despues</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="muted">Reforma de baño.</p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño2Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño2Despues.jpeg" alt="Proyecto 2">
+                        <p>Despues</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="muted">Reforma de cocina.</p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/cocina1Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/cocina1Despues.jpeg" alt="Proyecto 2">
+                        <p>Despues</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="muted">Reforma de cocina.</p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/cocina2Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/cocina2Despues.jpeg" alt="Proyecto 2">
+                        <p>Despues</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="muted">Reforma de dormitorio.</p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/dormitorio1Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/dormitorio1Despues.jpeg" alt="Proyecto 2">
+                        <p>Despues</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p class="muted">Reforma de salon.</p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/salon1Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/salon1Despues.jpeg" alt="Proyecto 2">
+                        <p>Despues</p>
+                    </a>
+                </div>
+            </div>
+
+            
         </section>
 
 </body>
