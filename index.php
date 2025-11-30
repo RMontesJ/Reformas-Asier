@@ -97,6 +97,8 @@
                     todo tipo de reformas en viviendas interior y exterior y nos hace diferentes la formalidad, seriedad
                     y acabado de los trabajos a ejecutar.</p>
 
+                    <p class="muted">Operamos en Aranjuez, Valdemoro, Ciempozuelos, Leganes, Toledo, Getafe, Pinto, Parla, Madrid Centro</p>
+
                 <dl class="faq">
                     <dt>¿Cuál es vuestro lema?</dt>
                     <dd class="muted">Formalidad,puntualidad en el trabajo y satisfacer al cliente en los trabajos a
