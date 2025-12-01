@@ -26,7 +26,7 @@
                 <h1>Reformas integrales con garantía y presupuesto claro</h1>
                 <p class="lead">Transformamos viviendas, cocinas, baños y locales con acabados duraderos y materiales de
                     calidad. Servicio llave en mano.</p>
-                <a href="#contacto" class="cta">Solicitar presupuesto</a>
+                <a href="contacto.php" class="cta">Solicitar presupuesto</a>
 
                 <div class="services">
                     <div class="service card">
