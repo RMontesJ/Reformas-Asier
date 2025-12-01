@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Reformas Asier</title>
-    <script src="../js/indexForm.js" defer></script>
+    <script src="js/indexForm.js" defer></script>
     <link rel="stylesheet" href="css/index.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/comun.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/nav.css?v=<?php echo time(); ?>">
@@ -50,7 +50,7 @@
 
             <div class="hero-right">
                 <div class="card featured">
-                    <img class="responsive-img" src="https://via.placeholder.com/600x400?text=Proyecto+destacado"
+                    <video class="responsive-img" src="videos/Reforma1Final.mp4" controls preload="metadata"
                         alt="Proyecto destacado">
                     <strong>Proyecto destacado:</strong>
                     <p class="muted">Reforma integral de vivienda en centro de la ciudad — 4 semanas.</p>
@@ -60,7 +60,7 @@
 
         <section id="portfolio" class="portfolio">
             <h2>Proyectos recientes</h2>
-            <p class="muted">Algunos trabajos realizados — haz clic para ver más detalle.</p>
+            <p class="muted"></p>
             <div class="grid">
                 
                 <a class="card project" href="#"><img class="responsive-img"
@@ -157,31 +157,6 @@
             </div>
         </section>
 
-        <section id="contacto" class="contact">
-            <h2>Contacto y presupuesto</h2>
-            <p class="muted">Rellena el formulario o llámanos para una visita sin compromiso.</p>
-
-            <div class="card">
-                <form id="contactForm" onsubmit="submitForm(event)">
-                    <div class="row">
-                        <input type="text" id="name" name="name" placeholder="Nombre" required>
-                        <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
-                    </div>
-                    <div class="full">
-                        <input type="email" id="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="full">
-                        <textarea id="message" name="message" rows="5"
-                            placeholder="Cuéntanos tu proyecto (metros, estancias, ideas)" required></textarea>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn">Enviar solicitud</button>
-                        <a class="tel-link" href="tel:+34900000000">Llámanos: +34 900 000 000</a>
-                    </div>
-                    <p id="formStatus" class="form-status"></p>
-                </form>
-            </div>
-        </section>
         <?php include 'includes/footer.php'; ?>
     </main>
 
