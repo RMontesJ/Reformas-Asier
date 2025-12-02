@@ -34,7 +34,7 @@
 </div>
 
 <input type="hidden" id="puntuacion" value="5">
-
+<input type="text" placeholder="Tu nombre" id="nombreUsuario">
 <textarea id="resenaTexto" placeholder="Escribe tu reseña..."></textarea>
 <br>
 <button onclick="guardarResena()">Enviar reseña</button>
@@ -153,6 +153,7 @@ onAuthStateChanged(auth, (user) => {
   // --------- GUARDAR RESEÑA ---------
   async function guardarResena() {
     const texto = document.getElementById("resenaTexto").value.trim();
+    const nombre = document.getElementById("nombreUsuario").value.trim();
     const puntuacion = parseInt(puntuacionInput.value);
 
     if (!texto) return alert("Escribe una reseña.");
@@ -160,6 +161,7 @@ onAuthStateChanged(auth, (user) => {
 
     await addDoc(collection(db, "resenas"), {
       texto,
+      nombre,
       puntuacion,
       fecha: new Date(),
       respuesta: "",
@@ -198,6 +200,7 @@ querySnapshot.forEach((docSnap) => {
 
     cont.innerHTML += `
         <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
+            <p><strong>Nombre:</strong> ${data.nombre}</p>
             <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
             <p><strong>Reseña:</strong> ${data.texto}</p>
             <p><strong>Fecha:</strong> ${fechaTexto}</p>
