@@ -9,7 +9,7 @@
                 <a href="testimonios.php">Testimonios</a>
                 <a href="proyectos.php">Proyectos</a>
                 <a href="contacto.php">Contacto</a>
-                <a href="contacto.php" class="cta">Pedir presupuesto</a>
+                <a href="contacto.php">Pedir presupuesto</a>
             </div>
         </nav>
 </div>
