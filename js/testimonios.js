@@ -81,9 +81,6 @@ onAuthStateChanged(auth, (user) => {
     mostrarLogout();
   } else {
     console.log("No logueado");
-    cargarResenas();
-
-    //mostrarLogin();
   }
 });
 
@@ -125,56 +122,61 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("resenaTexto").value = "";
     starsDiv.innerHTML = "★★★★★";
     puntuacionInput.value = 5;
-
     cargarResenas();
   }
   window.guardarResena = guardarResena;
 
 
   // --------- CARGAR RESEÑAS ---------
-  async function cargarResenas() {
-const cont = document.getElementById("listaResenas");
-cont.innerHTML = "";
+// ...existing code...
+import { query, orderBy } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
+// --------- CARGAR RESEÑAS ---------
+async function cargarResenas() {
+    const cont = document.getElementById("listaResenas");
+    cont.innerHTML = "";
 
-const querySnapshot = await getDocs(collection(db, "resenas"));
+    // Crear query ordenado por fecha descendente (más nuevas primero)
+    const q = query(
+        collection(db, "resenas"),
+        orderBy("fecha", "desc")  // "desc" = de más nuevas a más viejas
+    );
 
-querySnapshot.forEach((docSnap) => {
-    const data = docSnap.data();
+    const querySnapshot = await getDocs(q);
 
-    // Convertir el timestamp a fecha legible
-    let fechaTexto = "";
-    if (data.fecha) {
-        const fecha = data.fecha.toDate(); // Timestamp → Date
-        fechaTexto = fecha.toLocaleString(); // convierte a texto legible
-    }
+    querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
 
-    const estrellasMostradas = 
-        "★".repeat(data.puntuacion) + "☆".repeat(5 - data.puntuacion);
+        let fechaTexto = "";
+        if (data.fecha) {
+            const fecha = data.fecha.toDate();
+            fechaTexto = fecha.toLocaleString();
+        }
 
-    cont.innerHTML += `
-        <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
-            <p><strong>Nombre:</strong> ${data.nombre}</p>
-            <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
-            <p><strong>Reseña:</strong> ${data.texto}</p>
-            <p><strong>Fecha:</strong> ${fechaTexto}</p>
+        const estrellasMostradas = 
+            "★".repeat(data.puntuacion) + "☆".repeat(5 - data.puntuacion);
 
-            ${data.respondido 
-                ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
-                : `
-                    <textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
-                    <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>
-                `
-            }
-        </div>
-    `;
-});
+        cont.innerHTML += `
+            <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
+                <p><strong>Nombre:</strong> ${data.nombre}</p>
+                <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
+                <p><strong>Reseña:</strong> ${data.texto}</p>
+                <p><strong>Fecha:</strong> ${fechaTexto}</p>
 
-
+                ${data.respondido 
+                    ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
+                    : `
+                        <textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
+                        <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>
+                    `
+                }
+            </div>
+        `;
+    });
 }
 
 
-  window.cargarResenas = cargarResenas;
+window.cargarResenas = cargarResenas;
 
 
   // --------- RESPONDER RESEÑA ---------
@@ -200,5 +202,3 @@ cargarResenas();
 
   window.responderResena = responderResena;
 
-  // Cargar reseñas al abrir
-  cargarResenas();

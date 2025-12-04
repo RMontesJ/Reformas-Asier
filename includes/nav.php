@@ -6,6 +6,7 @@
                 </a>
             </div>
             <div class="nav-links">
+                <a href="index.php">Inicio</a>
                 <a href="testimonios.php">Testimonios</a>
                 <a href="proyectos.php">Proyectos</a>
                 <a href="contacto.php">Contacto</a>

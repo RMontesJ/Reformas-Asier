@@ -55,7 +55,7 @@
             </div>
 
             <div class="container">
-                <h2>Reforma de salon.</h2>
+                <h2>Reforma de baño.</h2>
                 <p class="muted"></p>
                 <div class="grid">
                     <a class="card project" href="#"><img class="responsive-img"
@@ -65,6 +65,38 @@
                     
                     <a class="card project" href="#"><img class="responsive-img"
                             src="img/baño3Despues.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Reforma de baño.</h2>
+                <p class="muted"></p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño4Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño4Despues.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Reforma de baño.</h2>
+                <p class="muted"></p>
+                <div class="grid">
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño5Antes.jpeg" alt="Proyecto 1">
+                        <p>Antes</p>
+                    </a>
+                    
+                    <a class="card project" href="#"><img class="responsive-img"
+                            src="img/baño5Despues.jpeg" alt="Proyecto 1">
                         <p>Antes</p>
                     </a>
                 </div>
