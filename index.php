@@ -68,12 +68,6 @@
                     <p>Baño con plato a ras</p>
                 </a>
                 
-                <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
-                        <source src="videos/Reforma1Final.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de vídeo.
-                    </video>
-                    <p>Reforma integral de vivienda completa</p>
-                </a>
 
                 <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
                         <source src="videos/Reforma2Final.mp4" type="video/mp4">

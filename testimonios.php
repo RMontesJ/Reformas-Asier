@@ -27,12 +27,19 @@
         <section class="testimonios" id="testimonios">
             <h1>Opiniones de nuestros clientes</h1>
 
+            <h3>Promedio de reseñas: <span id="promedioGeneral">Cargando...</span></h3>
+
             <h2>Dejar reseña</h2>
 
 <label>Calificación:</label>
-<div id="stars" style="font-size:24px; cursor:pointer;">
-  ★★★★★
-</div>
+
+<div class="stars" id="starContainer" >
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
 
 <input type="hidden" id="puntuacion" value="5">
 <input type="text" placeholder="Tu nombre" id="nombreUsuario">

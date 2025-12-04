@@ -89,19 +89,29 @@ onAuthStateChanged(auth, (user) => {
 
 
   // --------- SISTEMA DE ESTRELLAS ---------
-  const starsDiv = document.getElementById("stars");
-  const puntuacionInput = document.getElementById("puntuacion");
+const stars = document.querySelectorAll ('.star');
+const output = document.getElementById('ratingOutput');
+const puntuacionInput = document.getElementById('puntuacion');
 
-  starsDiv.addEventListener("click", (e) => {
-    const rect = starsDiv.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const porcentaje = x / rect.width;
-    const estrellas = Math.ceil(porcentaje * 5);
 
-    puntuacionInput.value = Math.max(1, Math.min(5, estrellas));
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        const rating = parseInt(star.getAttribute('data-value'));
 
-    starsDiv.innerHTML = "★★★★★".slice(0, estrellas) + "☆☆☆☆☆".slice(0, 5 - estrellas);
-  });
+        // 🔥 ACTUALIZAR VALOR REAL QUE LEE guardarResena()
+        puntuacionInput.value = rating;
+
+        stars.forEach(s => {
+            const value = parseInt(s.getAttribute('data-value'));
+            if (value <= rating) {
+                s.classList.add('filled');
+            } else {
+                s.classList.remove('filled');
+            }
+        });
+
+    });
+});
 
 
   // --------- GUARDAR RESEÑA ---------
@@ -123,7 +133,6 @@ onAuthStateChanged(auth, (user) => {
   })
   .then(() => {
     document.getElementById("resenaTexto").value = "";
-    starsDiv.innerHTML = "★★★★★";
     puntuacionInput.value = 5;
     cargarResenas();
   })
@@ -143,18 +152,25 @@ import { query, orderBy } from "https://www.gstatic.com/firebasejs/12.6.0/fireba
 // --------- CARGAR RESEÑAS ---------
 function cargarResenas() {
   const cont = document.getElementById("listaResenas");
+  const promedioSpan = document.getElementById("promedioGeneral");
   cont.innerHTML = "";
-
-  // Crear query ordenado por fecha descendente (más nuevas primero)
+  
   const q = query(
     collection(db, "resenas"),
-    orderBy("fecha", "desc")  // "desc" = de más nuevas a más viejas
+    orderBy("fecha", "desc")
   );
 
   getDocs(q)
     .then(querySnapshot => {
+      let total = 0;
+      let cantidad = 0;
+
       querySnapshot.forEach(docSnap => {
         const data = docSnap.data();
+
+        // Sumar puntuaciones para promedio
+        total += data.puntuacion;
+        cantidad++;
 
         let fechaTexto = "";
         if (data.fecha) {
@@ -173,21 +189,23 @@ function cargarResenas() {
 
             ${data.respondido 
               ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
-              : `
-                <textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
-                <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>
-              `
+              : `<textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
+                 <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>`
             }
           </div>
         `;
       });
+
+      // Calcular promedio
+      const promedio = cantidad > 0 ? (total / cantidad).toFixed(1) : 0;
+      promedioSpan.textContent = `⭐ ${promedio} / 5`;
     })
     .catch(err => {
       alert("Error al cargar reseñas");
       console.error(err);
+      promedioSpan.textContent = "Error";
     });
 }
-
 
 
 window.cargarResenas = cargarResenas;
