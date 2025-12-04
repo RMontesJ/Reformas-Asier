@@ -49,17 +49,19 @@ function mostrarLogin() {
     </div>
   `);
 
-  document.getElementById("btnLogin").onclick = async () => {
-    const email = document.getElementById("adminEmail").value;
-    const pass = document.getElementById("adminPass").value;
+  document.getElementById("btnLogin").onclick = () => {
+  const email = document.getElementById("adminEmail").value;
+  const pass = document.getElementById("adminPass").value;
 
-    try {
-      await signInWithEmailAndPassword(auth, email, pass);
+  signInWithEmailAndPassword(auth, email, pass)
+    .then(() => {
       document.getElementById("loginAdmin").remove();
-    } catch (err) {
+    })
+    .catch((err) => {
       alert("Correo o contraseña incorrectos");
-    }
-  };
+    });
+};
+
 }
 
 // Botón logout
@@ -81,6 +83,7 @@ onAuthStateChanged(auth, (user) => {
     mostrarLogout();
   } else {
     console.log("No logueado");
+        cargarResenas();
   }
 });
 
@@ -102,28 +105,34 @@ onAuthStateChanged(auth, (user) => {
 
 
   // --------- GUARDAR RESEÑA ---------
-  async function guardarResena() {
-    const texto = document.getElementById("resenaTexto").value.trim();
-    const nombre = document.getElementById("nombreUsuario").value.trim();
-    const puntuacion = parseInt(puntuacionInput.value);
+  function guardarResena() {
+  const texto = document.getElementById("resenaTexto").value.trim();
+  const nombre = document.getElementById("nombreUsuario").value.trim();
+  const puntuacion = parseInt(puntuacionInput.value);
 
-    if (!texto) return alert("Escribe una reseña.");
-    if (!puntuacion) return alert("Selecciona una puntuación.");
+  if (!texto) return alert("Escribe una reseña.");
+  if (!puntuacion) return alert("Selecciona una puntuación.");
 
-    await addDoc(collection(db, "resenas"), {
-      texto,
-      nombre,
-      puntuacion,
-      fecha: new Date(),
-      respuesta: "",
-      respondido: false
-    });
-
+  addDoc(collection(db, "resenas"), {
+    texto,
+    nombre,
+    puntuacion,
+    fecha: new Date(),
+    respuesta: "",
+    respondido: false
+  })
+  .then(() => {
     document.getElementById("resenaTexto").value = "";
     starsDiv.innerHTML = "★★★★★";
     puntuacionInput.value = 5;
     cargarResenas();
-  }
+  })
+  .catch(err => {
+    alert("Error al guardar la reseña");
+    console.error(err);
+  });
+}
+
   window.guardarResena = guardarResena;
 
 
@@ -132,48 +141,53 @@ onAuthStateChanged(auth, (user) => {
 import { query, orderBy } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 // --------- CARGAR RESEÑAS ---------
-async function cargarResenas() {
-    const cont = document.getElementById("listaResenas");
-    cont.innerHTML = "";
+function cargarResenas() {
+  const cont = document.getElementById("listaResenas");
+  cont.innerHTML = "";
 
-    // Crear query ordenado por fecha descendente (más nuevas primero)
-    const q = query(
-        collection(db, "resenas"),
-        orderBy("fecha", "desc")  // "desc" = de más nuevas a más viejas
-    );
+  // Crear query ordenado por fecha descendente (más nuevas primero)
+  const q = query(
+    collection(db, "resenas"),
+    orderBy("fecha", "desc")  // "desc" = de más nuevas a más viejas
+  );
 
-    const querySnapshot = await getDocs(q);
-
-    querySnapshot.forEach((docSnap) => {
+  getDocs(q)
+    .then(querySnapshot => {
+      querySnapshot.forEach(docSnap => {
         const data = docSnap.data();
 
         let fechaTexto = "";
         if (data.fecha) {
-            const fecha = data.fecha.toDate();
-            fechaTexto = fecha.toLocaleString();
+          const fecha = data.fecha.toDate();
+          fechaTexto = fecha.toLocaleString();
         }
 
-        const estrellasMostradas = 
-            "★".repeat(data.puntuacion) + "☆".repeat(5 - data.puntuacion);
+        const estrellasMostradas = "★".repeat(data.puntuacion) + "☆".repeat(5 - data.puntuacion);
 
         cont.innerHTML += `
-            <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
-                <p><strong>Nombre:</strong> ${data.nombre}</p>
-                <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
-                <p><strong>Reseña:</strong> ${data.texto}</p>
-                <p><strong>Fecha:</strong> ${fechaTexto}</p>
+          <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
+            <p><strong>Nombre:</strong> ${data.nombre}</p>
+            <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
+            <p><strong>Reseña:</strong> ${data.texto}</p>
+            <p><strong>Fecha:</strong> ${fechaTexto}</p>
 
-                ${data.respondido 
-                    ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
-                    : `
-                        <textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
-                        <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>
-                    `
-                }
-            </div>
+            ${data.respondido 
+              ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
+              : `
+                <textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
+                <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>
+              `
+            }
+          </div>
         `;
+      });
+    })
+    .catch(err => {
+      alert("Error al cargar reseñas");
+      console.error(err);
     });
 }
+
 
 
 window.cargarResenas = cargarResenas;
@@ -181,24 +195,26 @@ window.cargarResenas = cargarResenas;
 
   // --------- RESPONDER RESEÑA ---------
 
-    async function responderResena(id) {
-if (!auth.currentUser) {
-mostrarLogin(); // Muestra login solo si intenta responder
-return;
+    function responderResena(id) {
+  if (!auth.currentUser) {
+    mostrarLogin(); // Muestra login solo si intenta responder
+    return;
+  }
+
+  const campo = document.getElementById("resp_" + id);
+  const texto = campo.value.trim();
+  if (!texto) return alert("Escribe una respuesta.");
+
+  const ref = doc(db, "resenas", id);
+  updateDoc(ref, { respuesta: texto, respondido: true })
+    .then(() => {
+      cargarResenas();
+    })
+    .catch(err => {
+      alert("Error al responder la reseña");
+      console.error(err);
+    });
 }
 
-
-
-
-const campo = document.getElementById("resp_" + id);
-const texto = campo.value.trim();
-if (!texto) return alert("Escribe una respuesta.");
-
-const ref = doc(db, "resenas", id);
-await updateDoc(ref, { respuesta: texto, respondido: true });
-cargarResenas();
-
-}
 
   window.responderResena = responderResena;
-
