@@ -68,6 +68,19 @@
                     <p>Baño con plato a ras</p>
                 </a>
                 
+                <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
+                        <source src="videos/video_reforma_patio.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de vídeo.
+                    </video>
+                    <p>Reforma de patio</p>
+                </a>
+
+                <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
+                        <source src="videos/video_patio-barbacoa.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de vídeo.
+                    </video>
+                    <p>Reforma de patio con barbacoa</p>
+                </a>
 
                 <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
                         <source src="videos/Reforma2Final.mp4" type="video/mp4">
