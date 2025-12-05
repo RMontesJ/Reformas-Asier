@@ -67,6 +67,13 @@
                         src="img/fotoBañoDespues.jpeg" alt="Proyecto 2">
                     <p>Baño con plato a ras</p>
                 </a>
+
+                <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
+                        <source src="videos/reforma-integral-casa.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de vídeo.
+                    </video>
+                    <p>Reforma integral de vivienda completa</p>
+                </a>
                 
                 <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
                         <source src="videos/video_reforma_patio.mp4" type="video/mp4">
