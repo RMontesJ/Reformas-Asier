@@ -43,7 +43,7 @@
 
 <input type="hidden" id="puntuacion" value="5">
 <input type="text" placeholder="Tu nombre" id="nombreUsuario">
-<textarea id="resenaTexto" placeholder="Escribe tu reseña..."></textarea>
+<textarea id="resenaTexto"rows="10" cols="40" placeholder="Escribe tu reseña..."></textarea>
 <br>
 <button onclick="guardarResena()">Enviar reseña</button>
 
