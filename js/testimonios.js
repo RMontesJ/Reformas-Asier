@@ -150,65 +150,94 @@ stars.forEach(star => {
 import { query, orderBy } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 // --------- CARGAR RESEÑAS ---------
+let reseñasGlobal = []; // Para almacenar todas las reseñas
+let paginaActual = 0;   // Página actual (cada página = 5 reseñas)
+const reseñasPorPagina = 5;
+
 function cargarResenas() {
-  const cont = document.getElementById("listaResenas");
-  const promedioSpan = document.getElementById("promedioGeneral");
-  cont.innerHTML = "";
-  
-  const q = query(
-    collection(db, "resenas"),
-    orderBy("fecha", "desc")
-  );
+const cont = document.getElementById("listaResenas");
+const promedioSpan = document.getElementById("promedioGeneral");
+cont.innerHTML = ""; // Limpiar al inicio
+paginaActual = 0;    // Reiniciar la paginación
 
-  getDocs(q)
-    .then(querySnapshot => {
-      let total = 0;
-      let cantidad = 0;
+const q = query(collection(db, "resenas"), orderBy("fecha", "desc"));
 
-      querySnapshot.forEach(docSnap => {
-        const data = docSnap.data();
+getDocs(q)
+.then(querySnapshot => {
+reseñasGlobal = [];
+let total = 0;
+let cantidad = 0;
 
-        // Sumar puntuaciones para promedio
-        total += data.puntuacion;
-        cantidad++;
 
-        let fechaTexto = "";
-        if (data.fecha) {
-          const fecha = data.fecha.toDate();
-          fechaTexto = fecha.toLocaleString();
-        }
+  querySnapshot.forEach(docSnap => {
+    const data = docSnap.data();
+    data.id = docSnap.id; // Guardar id
+    reseñasGlobal.push(data);
 
-        const estrellasMostradas = "★".repeat(data.puntuacion) + "☆".repeat(5 - data.puntuacion);
+    total += data.puntuacion;
+    cantidad++;
+  });
 
-        cont.innerHTML += `
-          <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
-            <p><strong>Nombre:</strong> ${data.nombre}</p>
-            <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
-            <p><strong>Reseña:</strong> ${data.texto}</p>
-            <p><strong>Fecha:</strong> ${fechaTexto}</p>
+  const promedio = cantidad > 0 ? (total / cantidad).toFixed(1) : 0;
+  promedioSpan.textContent = `⭐ ${promedio} / 5`;
 
-            ${data.respondido 
-              ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
-              : `<textarea id="resp_${docSnap.id}" placeholder="Responder..."></textarea>
-                 <button onclick="responderResena('${docSnap.id}')">Enviar respuesta</button>`
-            }
-          </div>
-        `;
-      });
+  renderResenas(); // Mostrar solo las primeras 5
+})
+.catch(err => {
+  console.error(err);
+  promedioSpan.textContent = "Error";
+});
 
-      // Calcular promedio
-      const promedio = cantidad > 0 ? (total / cantidad).toFixed(1) : 0;
-      promedioSpan.textContent = `⭐ ${promedio} / 5`;
-    })
-    .catch(err => {
-      alert("Error al cargar reseñas");
-      console.error(err);
-      promedioSpan.textContent = "Error";
-    });
+
 }
 
+function renderResenas() {
+const cont = document.getElementById("listaResenas");
+const inicio = paginaActual * reseñasPorPagina;
+const fin = inicio + reseñasPorPagina;
+const reseñasParaMostrar = reseñasGlobal.slice(inicio, fin);
+
+reseñasParaMostrar.forEach(data => {
+let fechaTexto = "";
+if (data.fecha && data.fecha.toDate) {
+const fecha = data.fecha.toDate();
+fechaTexto = fecha.toLocaleString();
+}
+
+const estrellasMostradas = "★".repeat(data.puntuacion) + "☆".repeat(5 - data.puntuacion);
+
+cont.innerHTML += `
+  <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px;">
+    <p><strong>Nombre:</strong> ${data.nombre}</p>
+    <p><strong>Calificación:</strong> ${estrellasMostradas}</p>
+    <p><strong>Reseña:</strong> ${data.texto}</p>
+    <p><strong>Fecha:</strong> ${fechaTexto}</p>
+
+    ${data.respondido 
+      ? `<p><strong>Respuesta del administrador:</strong> ${data.respuesta}</p>`
+      : `<textarea id="resp_${data.id}" placeholder="Responder..."></textarea>
+         <button onclick="responderResena('${data.id}')">Enviar respuesta</button>`
+    }
+  </div>
+`;
+
+});
+
+// Agregar botón "Mostrar más" solo si quedan más reseñas
+if ((paginaActual + 1) * reseñasPorPagina < reseñasGlobal.length) {
+cont.innerHTML += `<button id="btnMostrarMas" onclick="mostrarMas()">Mostrar más</button>`;
+}
+}
+
+function mostrarMas() {
+paginaActual++;
+const btn = document.getElementById("btnMostrarMas");
+if (btn) btn.remove(); // quitar el botón actual
+renderResenas();        // mostrar las siguientes 5 reseñas
+}
 
 window.cargarResenas = cargarResenas;
+window.mostrarMas = mostrarMas;
 
 
   // --------- RESPONDER RESEÑA ---------
