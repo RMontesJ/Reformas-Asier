@@ -107,7 +107,7 @@
                 <p class="muted"></p>
                 <div class="grid">
                     <a class="card project" href="#"><img class="responsive-img"
-                            src="img/cocina1Antes.jpeg" alt="Proyecto 1">
+                            src="img/cocina1Antes (2).jpeg" alt="Proyecto 1">
                         <p>Antes</p>
                     </a>
                     
@@ -134,37 +134,7 @@
                 </div>
             </div>
 
-            <div class="container">
-                <h2>Reforma de dormitorio.</h2>
-                <p class="muted"></p>
-                <div class="grid">
-                    <a class="card project" href="#"><img class="responsive-img"
-                            src="img/dormitorio1Antes.jpeg" alt="Proyecto 1">
-                        <p>Antes</p>
-                    </a>
-                    
-                    <a class="card project" href="#"><img class="responsive-img"
-                            src="img/dormitorio1Despues.jpeg" alt="Proyecto 2">
-                        <p>Despues</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="container">
-                <h2>Reforma de salon.</h2>
-                <p class="muted"></p>
-                <div class="grid">
-                    <a class="card project" href="#"><img class="responsive-img"
-                            src="img/salon1Antes.jpeg" alt="Proyecto 1">
-                        <p>Antes</p>
-                    </a>
-                    
-                    <a class="card project" href="#"><img class="responsive-img"
-                            src="img/salon1Despues.jpeg" alt="Proyecto 2">
-                        <p>Despues</p>
-                    </a>
-                </div>
-            </div>
+            
 
             
         </section>
