@@ -69,7 +69,7 @@
                 </a>
 
                 <a class="card project" href="#"><video class="responsive-img" controls preload="metadata">
-                        <source src="videos/reforma-casa-integral(1).mp4" type="video/mp4">
+                        <source src="videos/video-reforma-integral(3).mp4" type="video/mp4">
                         Tu navegador no soporta el elemento de vídeo.
                     </video>
                     <p>Reforma integral de vivienda completa</p>
